@@ -8,7 +8,7 @@ This Project uses [Conventional Commits](https://www.conventionalcommits.org/en/
 
 **Prerequisites:** Node.js (see version specified in `.nvmrc`), Yarn v3+ (see version specified in `.yarnrc`)
 
-### One-time setup 
+### One-time setup
 
 First, ensure you have [nvm](https://github.com/nvm-sh/nvm/blob/master/README.md) (Node Version Manager) installed.
 
