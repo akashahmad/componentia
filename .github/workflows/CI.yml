@@ -1,0 +1,108 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop, main]
+
+jobs:
+  validate-and-test:
+    env:
+      CI: true
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📦 Checkout Github Repository
+        uses: actions/checkout@v4
+
+      - name: 📊 Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
+
+      - name: 🛠️ Setup Node.js and NPM
+        uses: actions/setup-node@v3
+        with:
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+
+      - name: 🔃 Cache or restore deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
+      - name: 📥 Download dependencies
+        run: npm install
+
+      - name: ⚙️ Run Lint Script
+        run: npm run lint
+
+      - name: 🧪 Run Tests
+        run: npm run test:ci
+
+      - name: 📤 Upload code coverage to artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-coverage-report
+          path: coverage
+
+  build-and-publish:
+    needs: validate-and-test
+    env:
+      CI: true
+    runs-on: ubuntu-latest
+
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 📦 Checkout Github Repository
+        uses: actions/checkout@v4
+
+      - name: 📊 Read .nvmrc
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+        id: nvm
+
+      - name: 🛠️ Setup Node.js and NPM
+        uses: actions/setup-node@v3
+        with:
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+
+      - name: 🔃 Cache or restore deps
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-node-modules-
+
+      - name: 📥 Download dependencies
+        run: npm install
+
+      - name: ⚙️ Build Components
+        run: npm run compile
+
+      - name: 📤 Upload build files to artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: library-build
+          path: lib
+
+      - name: 🚀 Semantic Release on NPM & Github
+        uses: cycjimmy/semantic-release-action@v4
+        with:
+          branch: main
+          extra_plugins: |
+            conventional-changelog-conventionalcommits
+            @semantic-release/commit-analyzer
+            @semantic-release/release-notes-generator
+            @semantic-release/npm
+            @semantic-release/git
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

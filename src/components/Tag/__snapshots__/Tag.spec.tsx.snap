@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tag component is rendering properly 1`] = `
+<div>
+  <button
+    class="py-[5px] px-[14px] rounded-md text-black inline-block cursor-pointer box-border focus:border-stroke focus:border-2 focus:bg-grey-9 focus:text-black bg-grey-9 hover:bg-primary hover:text-white"
+  >
+    <p
+      class="text-base leading-6 font-normal"
+    />
+  </button>
+</div>
+`;

@@ -1,0 +1,175 @@
+.tooltip-wrapper {
+    display: inline-block;
+    position: relative;
+    width: fit-content;
+}
+
+.tooltip-wrapper .icon {
+    cursor: pointer;
+}
+
+.tooltip-wrapper .description {
+    display: none;
+    text-align: start;
+    border-radius: 5px;
+    position: absolute;
+    width: max-content !important;
+    max-width: 300px;
+    word-wrap: normal;
+    word-wrap: break-word;
+}
+
+.tooltip-wrapper .description::before {
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #1f2a37;
+    transform: rotate(-90deg);
+}
+
+.tooltip-wrapper .descriptionlight {
+    display: none;
+    text-align: start;
+    border-radius: 5px;
+    position: absolute;
+    width: max-content !important;
+    max-width: 300px;
+    word-wrap: normal;
+    word-wrap: break-word;
+}
+
+.tooltip-wrapper .descriptionlight::before {
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    transform: rotate(-90deg);
+}
+
+.tooltip-wrapper:hover .description {
+    display: block;
+}
+
+.tooltip-wrapper:hover .descriptionlight {
+    display: block;
+}
+
+.right .description {
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 107%;
+    padding: 6px 0.6rem;
+}
+
+.right .description::before {
+    left: -10px;
+    top: 30%;
+    transform: rotate(-90deg);
+}
+
+.right .descriptionlight {
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 105%;
+    padding: 6px 0.6rem;
+}
+
+.right .descriptionlight::before {
+    left: -10px;
+    top: 30%;
+    transform: rotate(-90deg);
+}
+
+.bottom .description {
+    margin-top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 0.6rem;
+}
+
+.bottom .description::before {
+    top: 0.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -7%;
+}
+
+.bottom .descriptionlight {
+    margin-top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 0.6rem;
+}
+
+.bottom .descriptionlight::before {
+    top: 0.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: -7%;
+}
+
+.top .description {
+    bottom: 102%;
+    margin-left: 0%;
+    padding: 6px 0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top .description::before {
+    left: 50%;
+    transform: translateX(-50%);
+    transform: rotate(180deg);
+    bottom: -8px;
+}
+
+.top .descriptionlight {
+    bottom: 102%;
+    margin-left: 0%;
+    padding: 6px 0.6rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.top .descriptionlight::before {
+    left: 50%;
+    transform: translateX(-50%);
+    transform: rotate(180deg);
+    bottom: -8px;
+}
+
+.left .description {
+    right: 0;
+    margin-right: 105%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px 0.6rem;
+}
+
+.left .description::before {
+    transform: rotate(90deg);
+    right: 0;
+    top: 0.7rem;
+    margin-right: -10px;
+}
+
+.left .descriptionlight {
+    right: 0;
+    margin-right: 105%;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 6px 0.6rem;
+}
+
+.left .descriptionlight::before {
+    transform: rotate(90deg);
+    right: 0;
+    top: 0.7rem;
+    margin-right: -10px;
+}

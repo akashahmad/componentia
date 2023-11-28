@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component is rendering properly 1`] = `
+<div>
+  <div
+    class="flex items-center select-none cursor-pointer w-max"
+  >
+    <span
+      class="inline-block mr-[10px] cursor-pointer"
+    >
+      <svg
+        fill="none"
+        height="20"
+        viewBox="0 0 20 20"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="#F1F4FF"
+          height="19"
+          rx="3.5"
+          stroke="#009AEE"
+          width="19"
+          x="0.5"
+          y="0.5"
+        />
+        <rect
+          fill="#009AEE"
+          height="10"
+          rx="2"
+          width="10"
+          x="5"
+          y="5"
+        />
+      </svg>
+    </span>
+    <p
+      class="text-base leading-6 font-normal"
+    >
+      TEXT
+    </p>
+    <input
+      class="appearance-none opacity-0"
+      type="checkbox"
+      value="TEXT"
+    />
+  </div>
+</div>
+`;
