@@ -20,6 +20,7 @@ export function ConfirmationModal({
     icon: Icon,
     iconBgColor = colors.redLight5,
     actionButtonBgColor,
+    showOverlay = true,
 }: ConfirmationModalProps) {
     const [_open, set_Open] = React.useState(open || false);
 
@@ -35,17 +36,20 @@ export function ConfirmationModal({
     return (
         <Modal
             open={_open}
-            onClose={onClose}
+            onClose={handleCloseClick}
             showCloseIcon={false}
             position={position}
             className={cx("flex flex-col justify-center items-center")}
+            showOverlay={showOverlay}
         >
             {Icon && (
                 <div style={{ background: iconBgColor }} className={cx("p-[18px] rounded-full mb-[22px]")}>
                     {<Icon />}
                 </div>
             )}
-            <Typography variant="h3">{title}</Typography>
+            <div className="text-center">
+                <Typography variant="h3">{title}</Typography>
+            </div>
             {!Icon && <span className={cx("inline-block w-[90px] h-[3px] bg-primary rounded-xl mt-[18px]")} />}
             {desc && (
                 <div className="mt-6 text-center text-primary-text">
@@ -91,4 +95,5 @@ interface ConfirmationModalProps {
     actionButtonBgColor?: string;
     iconBgColor?: string;
     onActionButtonClick?: () => void;
+    showOverlay?: boolean;
 }

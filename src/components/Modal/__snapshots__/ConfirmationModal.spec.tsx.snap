@@ -6,11 +6,15 @@ exports[`ConfirmationModal component is rendering properly 1`] = `
     class="absolute translate-x-[-50%] rounded-[20px] p-[50px] shadow-2 bg-white z-50 left-1/2 top-[30px] hidden flex flex-col justify-center items-center"
     style="width: 530px;"
   >
-    <h3
-      class="text-[24px] font-semibold leading-[30px]"
+    <div
+      class="text-center"
     >
-      TEXT
-    </h3>
+      <h3
+        class="text-[24px] font-semibold leading-[30px]"
+      >
+        TEXT
+      </h3>
+    </div>
     <span
       class="inline-block w-[90px] h-[3px] bg-primary rounded-xl mt-[18px]"
     />
