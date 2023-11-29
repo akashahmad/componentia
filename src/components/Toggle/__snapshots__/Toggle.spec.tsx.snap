@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toggle component is rendering properly 1`] = `
+<div>
+  <div
+    class="h-8 w-[55px] bg-dark rounded-full relative cursor-pointer transition-all select-none bg-grey-3"
+  >
+    <span
+      class="w-7 h-7 rounded-full inline-block absolute top-1/2 translate-y-[-50%] left-[2px] bg-white"
+    />
+  </div>
+</div>
+`;

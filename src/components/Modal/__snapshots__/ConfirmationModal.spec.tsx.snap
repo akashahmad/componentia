@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmationModal component is rendering properly 1`] = `
+<div>
+  <div
+    class="absolute translate-x-[-50%] rounded-[20px] p-[50px] shadow-2 bg-white z-50 left-1/2 top-[30px] hidden flex flex-col justify-center items-center"
+    style="width: 530px;"
+  >
+    <h3
+      class="text-[24px] font-semibold leading-[30px]"
+    >
+      TEXT
+    </h3>
+    <span
+      class="inline-block w-[90px] h-[3px] bg-primary rounded-xl mt-[18px]"
+    />
+    <div
+      class="w-full flex items-center justify-between mt-[35px]"
+    >
+      <button
+        class="rounded-md px-7 py-3 border font-medium flex justify-center items-center w-full text-base px-7 py-3 loading-6 text-dark border-dark hover:bg-grey-4 cursor-pointer mr-[9px]"
+        role="button"
+        style="border-color: #dfe4ea;"
+      >
+        Cancel
+      </button>
+      <button
+        class="rounded-md px-7 py-3 border font-medium flex justify-center items-center w-full text-base px-7 py-3 loading-6 bg-primary text-white hover:bg-blue-dark cursor-pointer ml-[9px]"
+        role="button"
+        style="border-color: #dfe4ea;"
+      >
+        View Details
+      </button>
+    </div>
+  </div>
+</div>
+`;

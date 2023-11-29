@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressBar component is rendering properly 1`] = `
+<div>
+  <div
+    class="bg-grey-10 w-full h-[7px] rounded-full overflow-hidden inline-block"
+  >
+    <span
+      class="inline-block h-[7px] absolute rounded-full bg-teal-light-4"
+      style="width: 50%;"
+    />
+  </div>
+</div>
+`;
