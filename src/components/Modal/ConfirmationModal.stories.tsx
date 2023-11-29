@@ -85,6 +85,7 @@ export const WithIcon: Story = {
         desc: "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum been.",
         actionButtonText: "Deactivate",
         icon: () => <WarningIcon />,
+        showOverlay: false,
     },
     argTypes: {},
     render: props => (

@@ -1,1 +1,6 @@
 coverage/
+lib/
+storybook-static/
+.storybook/
+.husky/
+.vscode/
