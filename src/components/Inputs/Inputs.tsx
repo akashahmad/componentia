@@ -16,6 +16,7 @@ export function FormInput({
     className,
     onChange,
     style,
+    ...rest
 }: InputProps) {
     return (
         <div className="flex flex-col gap-[5px]">
@@ -62,6 +63,7 @@ export function FormInput({
                     placeholder={palceholder}
                     readOnly={readOnly}
                     required={required}
+                    {...rest}
                 />
             </div>
             {helperText && (
@@ -80,7 +82,7 @@ export function FormInput({
     );
 }
 
-interface InputProps {
+interface InputProps extends Omit<React.InputHTMLAttributes<HTMLInputElement>, "size"> {
     variant?: "Success" | "Error" | "Default";
     size?: "Small" | "Medium" | "Large";
     label?: string;
