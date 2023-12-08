@@ -12,6 +12,7 @@ export function Modal({
     position = "top",
     className = "",
     style = {},
+    overlyStyle = {},
     children,
     onClose,
     showCloseIcon = true,
@@ -46,6 +47,7 @@ export function Modal({
 
             {showOverlay && open && (
                 <div
+                    style={{ ...overlyStyle }}
                     onClick={onClose}
                     className="bg-dark absolute left-0 right-0 bottom-0 top-0 w-full h-full opacity-40 z-40"
                 />
@@ -62,6 +64,7 @@ interface ModalProps {
     position?: "top" | "center" | "bottom";
     children: React.ReactNode;
     style?: React.CSSProperties;
+    overlyStyle?: React.CSSProperties;
     className?: string;
     showOverlay?: boolean;
 }
